@@ -74,19 +74,15 @@ public class PlayerMotor : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
+		//collision with robot
 		if (collision.gameObject.name == "Melee Robot(Clone)")
         {
 			healthAmount -= 1;
-			Debug.Log(healthAmount);
-        }
-		//teleportation to new scenes
-		if (collision.gameObject.name == "Training Portal")
-        {
-			SceneManager.LoadScene("Training Level");
-        }
-		if (collision.gameObject.name == "Egypt Portal")
-        {
-			SceneManager.LoadScene("Egypt");
+			
+			if (healthAmount < 1)
+			{
+				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			}
         }
 	}
 }

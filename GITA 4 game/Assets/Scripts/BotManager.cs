@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BotManager : MonoBehaviour
 {
@@ -10,8 +11,7 @@ public class BotManager : MonoBehaviour
 	private float botX;
 	private float botZ;
 	
-	
-	GameObject[] robots = new GameObject[10];
+	GameObject[] robots = new GameObject[12];
 	
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,24 @@ public class BotManager : MonoBehaviour
 		for (int i = 0; i < robots.Length; i++)
 		{
 			Quaternion botRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-			botX = Random.Range(-30, 30);
-			botZ = Random.Range(0, 50);
 			
-			GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 0f, botZ), botRotation);
+			if (SceneManager.GetActiveScene().name == "Egypt")
+			{
+				botX = Random.Range(-30, 30);
+				botZ = Random.Range(0, 50);	
+				
+				GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 0f, botZ), botRotation);
+				robots[i] = robot;
+			}
+			else if (SceneManager.GetActiveScene().name == "Siberia")
+			{
+				botX = Random.Range(-30, 20);
+				botZ = Random.Range(60, 120);
 
-			// Add robot to array
-			robots[i] = robot;
+				GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 15f, botZ), botRotation);
+				robots[i] = robot;
+			}
+			
 		}
     }
 
@@ -41,13 +52,23 @@ public class BotManager : MonoBehaviour
 				Quaternion botRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
 				if (robots[i] == null)
 				{
-					botX = Random.Range(-30, 30);
-					botZ = Random.Range(0, 50);
-					
-					GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 0f, botZ), botRotation);
+					if (SceneManager.GetActiveScene().name == "Egypt")
+					{
+						botX = Random.Range(-30, 30);
+						botZ = Random.Range(0, 50);	
+						
+						GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 0f, botZ), botRotation);
+						robots[i] = robot;
+					}
+					else if (SceneManager.GetActiveScene().name == "Siberia")
+					{
+						botX = Random.Range(-30, 20);
+						botZ = Random.Range(60, 120);	
+						
+						GameObject robot = Instantiate(robotPrefab, new Vector3(botX, 15f, botZ), botRotation);
+						robots[i] = robot;
+					}
 
-					// Add robot to array
-					robots[i] = robot;
 				}
 			}
 			timeSinceLastSpawn = 0f;

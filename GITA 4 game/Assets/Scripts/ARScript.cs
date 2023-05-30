@@ -63,7 +63,7 @@ public class ARScript : MonoBehaviour
 				Quaternion bulletRotation = Quaternion.Euler(playerRotation.eulerAngles.x, playerRotation.eulerAngles.y, playerRotation.eulerAngles.z);
 				
 				//Generates and shoots bullet
-				GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0.3f, -0f, 0), bulletRotation);
+				GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0.2f, -0f, 0), bulletRotation);
 				bullet.GetComponent<Rigidbody>().velocity = transform.up * -1 * bulletSpeed;
 				
 				//Code for recoil

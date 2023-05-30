@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 0e0adacabd771e742ae03214858b71c7
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Egypt.unity
     guid: 4102ad2edf712e84e8b6133643424c38
+  - enabled: 1
+    path: Assets/Scenes/Siberia.unity
+    guid: 4c1dcfe74eb51ab40ac2ad6b719694d6
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: d52f863a7ff33f343925354e2eb1c3d1
   m_configObjects: {}

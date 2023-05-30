@@ -20,6 +20,9 @@ public class BulletScript : MonoBehaviour
 	
 	private void OnCollisionEnter(Collision collision)
 	{
-		Destroy(bulletPrefab);
+		if (gameObject.name == "Assault Bullet(Clone)" || gameObject.name == "Pistol Bullet(Clone)")
+		{
+			Destroy(bulletPrefab);
+		}
 	}
 }

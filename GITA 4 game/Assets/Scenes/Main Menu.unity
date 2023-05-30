@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 1585925826}
   - component: {fileID: 1585925825}
   - component: {fileID: 1585925827}
+  - component: {fileID: 1585925828}
   m_Layer: 0
   m_Name: Tutorial Button
   m_TagString: Untagged
@@ -494,6 +495,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.84176, y: 2.8496094}
   m_EdgeRadius: 0
+--- !u!114 &1585925828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585925823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b639572d77d7f4dbbb2b39b93594f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpURL: https://github.com/MKim1871/global-citizen-revised/blob/main/README.md
+  playButton: {fileID: 1927098956}
+  tutorialButton: {fileID: 1585925823}
+  hoverCursor: {fileID: 2800000, guid: 001b881f5f670414a81ffd459017f456, type: 3}
 --- !u!1 &1621354833
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +923,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b639572d77d7f4dbbb2b39b93594f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helpURL: https://github.com/MKim1871/global-citizen-revised/blob/main/README.md
+  playButton: {fileID: 1927098956}
+  tutorialButton: {fileID: 0}
+  hoverCursor: {fileID: 2800000, guid: 001b881f5f670414a81ffd459017f456, type: 3}
 --- !u!61 &1927098961
 BoxCollider2D:
   m_ObjectHideFlags: 0

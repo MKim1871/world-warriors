@@ -21,11 +21,11 @@ public class RobotScript : MonoBehaviour
     {
 		Vector3 distanceFromPlayer = playerPrefab.transform.position - transform.localPosition;
 		distanceFromPlayer.y = 0f;
-		float angleComparedToPlayer = Vector3.Angle(transform.forward, distanceFromPlayer);
+		float angleComparedToPlayer = Vector3.Angle(transform.forward, distanceFromPlayer.normalized);
 
-		if (angleComparedToPlayer < 180f * 0.5f && distanceFromPlayer.magnitude > 1.15f && distanceFromPlayer.magnitude < 10f)
+		if (angleComparedToPlayer < 240f * 0.5f && distanceFromPlayer.magnitude > 1.0f && distanceFromPlayer.magnitude < 10f)
 		{
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(distanceFromPlayer), 10f * Time.deltaTime);
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(distanceFromPlayer.normalized), 10f * Time.deltaTime);
 			
 	        transform.Translate(Vector3.forward * robotSpeed * Time.deltaTime);
 		}	
@@ -36,11 +36,11 @@ public class RobotScript : MonoBehaviour
 	{
 		if (collision.gameObject.name == "Pistol Bullet(Clone)")
         {
-			health -= 100;
+			health -= 10;
         }
 		if (collision.gameObject.name == "Assault Bullet(Clone)")
         {
-			health -= 500;
+			health -= 5;
         }
 		if (collision.gameObject.name == "Snow Puddle(Clone)")
 		{
