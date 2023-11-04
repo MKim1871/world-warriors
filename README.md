@@ -1,4 +1,4 @@
-# global-citizen-revised
+# world-warriors
 Final project, ran into some push errors so I recopied it
 
 What is World Warriors?
